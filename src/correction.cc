@@ -469,6 +469,9 @@ CorrectionSet::CorrectionSet(const std::string& fn) {
   fclose(fp);
 
   schema_version_ = json["schema_version"].GetInt();
+  if ( schema_version_ != 1 ) {
+    throw std::runtime_error("This evaluator is designed for schema v1 corrections only. Got version: " + std::to_string(schema_version_));
+  }
   for (const auto& item : json["corrections"].GetArray()) {
     corrections_.emplace_back(item);
   }
