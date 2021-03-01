@@ -1,4 +1,4 @@
-correctionlib
+correctionlib (cms-egamma)
 =============
 
 The purpose of this library is to provide a well-structured JSON data format for a
